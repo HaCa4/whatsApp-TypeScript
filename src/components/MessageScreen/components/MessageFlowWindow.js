@@ -5,29 +5,29 @@ import Message from "./Message";
 
 //MUI_COMPONENTS
 import { Container, Stack } from "@mui/material";
+//MUI SX PROPS AS CONSTANTS
+import {
+  flowContainer,
+  flowStack,
+} from "../../../Constants/StylingConstants/MessageScreen";
 
 //CONTEXT
-import { DisplayMessageContext } from "../../context/DisplayMessageContext";
+import { DisplayMessageContext } from "../../../context/DisplayMessageContext";
 
 const MessageFlowWindow = () => {
   const { messageList } = useContext(DisplayMessageContext);
+
+  const renderMessageList = () => {
+    return messageList.map((message, index) => (
+      <Message key={index} text={message} />
+    ));
+  };
+
   if (messageList !== 0)
     return (
-      <Container
-        sx={{
-          height: "81vh",
-          width: "90%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          justifyContent: "flex-end",
-        }}
-        overflow="auto"
-      >
-        <Stack sx={{ width: "max-content" }} spacing={2} mb={2}>
-          {messageList.map((message, index) => (
-            <Message key={index} text={message} />
-          ))}
+      <Container sx={flowContainer}>
+        <Stack overflow="auto" sx={flowStack} spacing={2} mb={2}>
+          {renderMessageList()}
         </Stack>
       </Container>
     );

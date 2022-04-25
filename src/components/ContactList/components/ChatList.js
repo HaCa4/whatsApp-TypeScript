@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import randomUser from "../../../apis/randomUser";
 //MUI-COMPONENTS
 import { Box } from "@mui/material";
+//MUI SX PROPS AS CONSTANTS
+import { chatListBox } from "../../../Constants/StylingConstants/ContactList";
 //COMPONENTS
 import PersonCard from "./PersonCard";
 
@@ -28,27 +30,14 @@ const ChatList = () => {
           key={index}
           avatar={person.picture.thumbnail}
           name={person.name.first}
-          text="Hello there, how is it going today? etc. etc. etc."
+          text="Hello there, how is it going today?"
         />
       );
     });
   };
+
   return (
-    <Box
-      overflow="auto"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        "&::-webkit-scrollbar": {
-          width: "6px",
-        },
-        "&::-webkit-scrollbar-thumb": {
-          backgroundColor: "#CED0D1",
-          height: "10px", //çalışmıyor
-        },
-      }}
-    >
+    <Box overflow="auto" sx={chatListBox}>
       {renderRandomPersonList()}
     </Box>
   );

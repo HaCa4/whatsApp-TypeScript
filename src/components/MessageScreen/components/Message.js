@@ -1,44 +1,24 @@
 //MUI-COMPONENTS
 import { Box, Typography } from "@mui/material";
+//MUI SX PROPS AS CONSTANTS
+import {
+  innerBox,
+  messageBox,
+  messageTypo1,
+  messageTypo2,
+} from "../../../Constants/StylingConstants/MessageScreen";
 
 const Message = ({ text }) => {
   const textTime = new Date();
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        height: "2.5rem",
-        minWidth: "20vw",
-        paddingX: "0.5rem",
-        backgroundColor: "rgba(217,253,211)",
-        borderRadius: "4px",
-        flexWrap: "no-wrap",
-      }}
-    >
+    <Box sx={messageBox}>
       <Box>
-        <Typography
-          variant="subtitle2"
-          sx={{ color: "black", fontWeight: "lighter" }}
-        >
+        <Typography variant="subtitle2" sx={messageTypo1}>
           {text}
         </Typography>
       </Box>
-      <Box
-        sx={{
-          alignSelf: "flex-end",
-          textAlign: "right",
-          marginRight: "0.5rem",
-        }}
-      >
-        <Typography
-          variant="caption"
-          sx={{
-            color: "#667781",
-          }}
-        >
-          Dün {""}
+      <Box sx={innerBox}>
+        <Typography variant="caption" sx={messageTypo2}>
           {textTime.getHours() + "." + textTime.getMinutes()}
         </Typography>
       </Box>

@@ -1,68 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
 
 //MUI-COMPONENTS
 import { Grid, Avatar, Typography, Box } from "@mui/material";
+//MUI SX PROPS AS CONSTANTS
+import {
+  mainGrid,
+  gridAvatar,
+  gridItem,
+  gridContainer,
+  secondTypo,
+  lastBox,
+} from "../../../Constants/StylingConstants/ContactList";
+//CONTEXT
+import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
 
 const PersonCard = ({ avatar, name, text }) => {
+  const { selectedPerson, setSelectedPerson } = useContext(DisplayActivePerson);
   return (
     <Grid
+      onClick={() =>
+        setSelectedPerson({ ...selectedPerson, photo: avatar, title: name })
+      }
       container
-      sx={{
-        paddingLeft: "0.85rem",
-        minHeight: "5rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "102%" /*NEDEN? */,
-        marginBottom: "0.5rem",
-      }}
+      sx={mainGrid}
       spacing={1}
     >
       <Grid item xs={2} pb={1}>
-        <Avatar sx={{ width: "3.2rem", height: "3.2rem" }} src={avatar} />
+        <Avatar sx={gridAvatar} src={avatar} />
       </Grid>
 
-      <Grid
-        item
-        xs={10}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "left",
-          paddingRight: "1rem",
-          borderBottom: "1px solid rgb(102,119,129,0.1)",
-          height: "100%",
-        }}
-      >
-        <Grid
-          container
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            paddingTop: "0.7rem",
-          }}
-        >
+      <Grid item xs={10} sx={gridItem}>
+        <Grid container sx={gridContainer}>
           <Grid item xs={11}>
             <Typography>{name}</Typography>
           </Grid>
           <Grid item xs={1}>
-            <Typography
-              variant="caption"
-              sx={{ color: "#667781", alignSelf: "flex-end" }}
-            >
+            <Typography variant="caption" sx={secondTypo}>
               Dün
             </Typography>
           </Grid>
         </Grid>
 
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            color: "#667781",
-          }}
-        >
+        <Box sx={lastBox}>
           <Typography variant="caption">{text}</Typography>
         </Box>
       </Grid>

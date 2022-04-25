@@ -1,32 +1,27 @@
-import React from "react";
-
+import React, { useContext } from "react";
 //MUI-COMPONENTS
 import { Grid, Avatar } from "@mui/material";
+//MUI SX PROPS AS CONSTANTS
+import {
+  activeAvatar,
+  activeGridContainer,
+} from "../../../Constants/StylingConstants/MessageScreen";
 //MUI-ICONS
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertSharpIcon from "@mui/icons-material/MoreVertSharp";
+//CONTEXT
+import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
 
 const ActivePersonBar = () => {
+  const { selectedPerson } = useContext(DisplayActivePerson);
+
   return (
-    <Grid
-      container
-      sx={{
-        displayContent: "center",
-        alignItems: "center",
-        backgroundColor: "#f0f2f5",
-        paddingY: "0.6rem",
-        borderLeft: "1px solid rgb(102,119,129,0.3)",
-      }}
-    >
+    <Grid container sx={activeGridContainer}>
       <Grid item xs={1.5} sx={{ paddingLeft: "1rem" }}>
-        <Avatar
-          sx={{ width: "2.5rem", height: "2.5rem" }}
-          alt="random"
-          src="https://ychef.files.bbci.co.uk/1376x774/p07phq4b.jpg"
-        />
+        <Avatar sx={activeAvatar} src={selectedPerson.photo} />
       </Grid>
       <Grid item xs={9.5} sx={{ textAlign: "left" }}>
-        PersonName
+        {selectedPerson.title}
       </Grid>
       <Grid item xs={1}>
         <SearchIcon />
