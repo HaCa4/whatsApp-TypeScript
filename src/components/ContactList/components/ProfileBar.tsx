@@ -10,20 +10,18 @@ import {
   secondGrid,
   secondGridBox,
 } from "../../../Constants/StylingConstants/ContactList";
+//CONSTANTS
+import { profileImage } from "../../../Constants/AppConstants";
 //MUI/ICONS
 import AutorenewRoundedIcon from "@mui/icons-material/AutorenewRounded";
 import ChatSharpIcon from "@mui/icons-material/ChatSharp";
 import MoreVertSharpIcon from "@mui/icons-material/MoreVertSharp";
 
-const ProfileBar = () => {
+const ProfileBar: React.FC = () => {
   return (
     <Grid container sx={profileGridContainer} spacing={2}>
       <Grid item xs={7}>
-        <Avatar
-          sx={profileAvatar}
-          alt="random"
-          src="https://ychef.files.bbci.co.uk/1376x774/p07phq4b.jpg"
-        />
+        <Avatar sx={profileAvatar} alt="random" src={profileImage} />
       </Grid>
       <Grid item xs={5} sx={secondGrid}>
         <Box sx={secondGridBox}>

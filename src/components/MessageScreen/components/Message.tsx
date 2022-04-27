@@ -8,8 +8,8 @@ import {
   messageTypo2,
 } from "../../../Constants/StylingConstants/MessageScreen";
 
-const Message = ({ text }) => {
-  const textTime = new Date();
+const Message: React.FC<any> = ({ text }) => {
+  const textTime: any = new Date();
   return (
     <Box sx={messageBox}>
       <Box>

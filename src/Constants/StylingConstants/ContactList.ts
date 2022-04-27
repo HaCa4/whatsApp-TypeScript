@@ -85,4 +85,5 @@ export const searchInput = {
   borderRadius: "6px",
   width: "95%",
   height: "70%",
+  paddingLeft:"2rem"
 };

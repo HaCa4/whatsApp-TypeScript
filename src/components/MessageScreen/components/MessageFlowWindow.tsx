@@ -14,23 +14,20 @@ import {
 //CONTEXT
 import { DisplayMessageContext } from "../../../context/DisplayMessageContext";
 
-const MessageFlowWindow = () => {
+const MessageFlowWindow: React.FC = () => {
   const { messageList } = useContext(DisplayMessageContext);
-
-  const renderMessageList = () => {
-    return messageList.map((message, index) => (
+  const renderMessageList: Function = () => {
+    return messageList.map((message: any, index: number) => (
       <Message key={index} text={message} />
     ));
   };
-
-  if (messageList !== 0)
-    return (
-      <Container sx={flowContainer}>
-        <Stack overflow="auto" sx={flowStack} spacing={2} mb={2}>
-          {renderMessageList()}
-        </Stack>
-      </Container>
-    );
+  return (
+    <Container sx={flowContainer}>
+      <Stack overflow="auto" sx={flowStack} spacing={2} mb={2}>
+        {renderMessageList()}
+      </Stack>
+    </Container>
+  );
 };
 
 export default MessageFlowWindow;

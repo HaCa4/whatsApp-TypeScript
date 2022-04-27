@@ -12,7 +12,7 @@ import MessageFlowWindow from "./components/MessageFlowWindow";
 import { DisplayMessageContext } from "../../context/DisplayMessageContext";
 
 const MessageScreen = () => {
-  const [messageList, setMessageList] = useState([]);
+  const [messageList, setMessageList] = useState<any[]>([]);
 
   return (
     <Grid item sx={screenGrid}>

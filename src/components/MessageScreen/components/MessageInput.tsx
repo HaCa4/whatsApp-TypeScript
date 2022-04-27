@@ -19,14 +19,13 @@ import SendIcon from "@mui/icons-material/Send";
 //CONTEXT
 import { DisplayMessageContext } from "../../../context/DisplayMessageContext";
 
-const MessageInput = () => {
-  const [message, setMessage] = useState("");
+const MessageInput: React.FC = () => {
+  const [message, setMessage] = useState<string>("");
 
   const { messageList, setMessageList } = useContext(DisplayMessageContext);
 
-  const onTextSubmit = (event) => {
+  const onTextSubmit = () => {
     setMessageList([...messageList, message]);
-    console.log(messageList);
   };
   return (
     <Grid container sx={inputGrid}>
@@ -40,7 +39,7 @@ const MessageInput = () => {
         <TextField
           onChange={(e) => setMessage(e.target.value)}
           name="text"
-          value={message.text}
+          value={message}
           multiline
           rows={1}
           size="small"

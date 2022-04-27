@@ -8,11 +8,13 @@ import { Box } from "@mui/material";
 import { chatListBox } from "../../../Constants/StylingConstants/ContactList";
 //COMPONENTS
 import PersonCard from "./PersonCard";
+//CONSTANTS
+import { Person } from "../../../Constants/Types";
 
-const ChatList = () => {
-  const [randomPersonList, setRandomPersonList] = useState([]);
+const ChatList: React.FC = () => {
+  const [randomPersonList, setRandomPersonList] = useState<Person[]>([]);
 
-  const fetchRandomPersonList = async () => {
+  const fetchRandomPersonList: Function = async () => {
     await randomUser
       .get("/?results=20")
       .then((response) => setRandomPersonList(response.data.results))
@@ -24,7 +26,7 @@ const ChatList = () => {
   }, []);
 
   const renderRandomPersonList = () => {
-    return randomPersonList.map((person, index) => {
+    return randomPersonList.map((person: Person, index: number) => {
       return (
         <PersonCard
           key={index}

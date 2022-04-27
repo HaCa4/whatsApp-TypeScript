@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 //MUI-COMPONENTS
 import { Grid, Avatar, Typography, Box } from "@mui/material";
+
 //MUI SX PROPS AS CONSTANTS
 import {
   mainGrid,
@@ -11,10 +12,12 @@ import {
   secondTypo,
   lastBox,
 } from "../../../Constants/StylingConstants/ContactList";
+
 //CONTEXT
 import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
+import { PersonCardProps } from "../../../Constants/Types";
 
-const PersonCard = ({ avatar, name, text }) => {
+const PersonCard: React.FC<PersonCardProps> = ({ avatar, name, text }) => {
   const { selectedPerson, setSelectedPerson } = useContext(DisplayActivePerson);
   return (
     <Grid

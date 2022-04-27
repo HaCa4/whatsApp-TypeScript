@@ -12,7 +12,7 @@ import MoreVertSharpIcon from "@mui/icons-material/MoreVertSharp";
 //CONTEXT
 import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
 
-const ActivePersonBar = () => {
+const ActivePersonBar: React.FC = () => {
   const { selectedPerson } = useContext(DisplayActivePerson);
 
   return (

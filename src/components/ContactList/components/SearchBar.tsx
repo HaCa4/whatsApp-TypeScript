@@ -6,13 +6,11 @@ import {
   searchBox,
   searchInput,
 } from "../../../Constants/StylingConstants/ContactList";
-const SearchBar = () => {
+import { searchBarPlaceholder } from "../../../Constants/AppConstants";
+const SearchBar: React.FC = () => {
   return (
     <Box sx={searchBox}>
-      <input
-        style={searchInput}
-        placeholder={"    Aratın veya yeni sohbet başlatın"}
-      />
+      <input style={searchInput} placeholder={searchBarPlaceholder} />
     </Box>
   );
 };

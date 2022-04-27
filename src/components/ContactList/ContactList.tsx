@@ -10,7 +10,7 @@ import ProfileBar from "./components/ProfileBar";
 import ChatList from "./components/ChatList";
 import SearchBar from "./components/SearchBar";
 
-const ContactList = () => {
+const ContactList: React.FC = () => {
   return (
     <Grid item sx={contactGrid}>
       <ProfileBar />
