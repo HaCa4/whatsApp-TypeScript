@@ -9,18 +9,16 @@ import ActivePersonBar from "./components/ActivePersonBar";
 import MessageInput from "./components/MessageInput";
 import MessageFlowWindow from "./components/MessageFlowWindow";
 //CONTEXT
-import { DisplayMessageContext } from "../../context/DisplayMessageContext";
+import { DisplayMessageContextProvider } from "../../context/DisplayMessageContext";
 
 const MessageScreen = () => {
-  const [messageList, setMessageList] = useState<any[]>([]);
-
   return (
     <Grid item sx={screenGrid}>
       <ActivePersonBar />
-      <DisplayMessageContext.Provider value={{ messageList, setMessageList }}>
+      <DisplayMessageContextProvider>
         <MessageFlowWindow />
         <MessageInput />
-      </DisplayMessageContext.Provider>
+      </DisplayMessageContextProvider>
     </Grid>
   );
 };

@@ -1,9 +1,12 @@
-export interface Person{
-    name:any,
-    picture:any}
+export type Person = {
+  name: { first: string };
+  picture: {
+    thumbnail: string;
+  };
+};
 
-export interface PersonCardProps{
-    avatar:string,
-    name:string,
-    text:string
-}
+export type PersonCardProps = {
+  avatar: string;
+  name: string;
+  text: string;
+};

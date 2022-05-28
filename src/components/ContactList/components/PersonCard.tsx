@@ -18,11 +18,11 @@ import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
 import { PersonCardProps } from "../../../Constants/Types";
 
 const PersonCard: React.FC<PersonCardProps> = ({ avatar, name, text }) => {
-  const { selectedPerson, setSelectedPerson } = useContext(DisplayActivePerson);
+  const person = useContext(DisplayActivePerson);
   return (
     <Grid
       onClick={() =>
-        setSelectedPerson({ ...selectedPerson, photo: avatar, title: name })
+        person?.setSelectedPerson({ ...person?.selectedPerson, photo: avatar, title: name })
       }
       container
       sx={mainGrid}

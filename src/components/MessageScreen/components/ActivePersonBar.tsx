@@ -13,20 +13,24 @@ import MoreVertSharpIcon from "@mui/icons-material/MoreVertSharp";
 import { DisplayActivePerson } from "../../../context/DisplayActivePerson";
 
 const ActivePersonBar: React.FC = () => {
-  const { selectedPerson } = useContext(DisplayActivePerson);
+  const person = useContext(DisplayActivePerson);
 
   return (
     <Grid container sx={activeGridContainer}>
-      <Grid item xs={1.5} sx={{ paddingLeft: "1rem" }}>
-        <Avatar sx={activeAvatar} src={selectedPerson.photo} />
-      </Grid>
-      <Grid item xs={9.5} sx={{ textAlign: "left" }}>
-        {selectedPerson.title}
-      </Grid>
-      <Grid item xs={1}>
-        <SearchIcon />
-        <MoreVertSharpIcon />
-      </Grid>
+      {person !== null && person.selectedPerson !== null ? (
+        <>
+          <Grid item xs={1.5} sx={{ paddingLeft: "1rem" }}>
+            <Avatar sx={activeAvatar} src={person.selectedPerson.photo} />
+          </Grid>
+          <Grid item xs={9.5} sx={{ textAlign: "left" }}>
+            {person.selectedPerson.title}
+          </Grid>
+          <Grid item xs={1}>
+            <SearchIcon />
+            <MoreVertSharpIcon />
+          </Grid>
+        </>
+      ) : null}
     </Grid>
   );
 };

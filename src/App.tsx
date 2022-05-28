@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { DisplayActivePerson } from "./context/DisplayActivePerson";
+import { DisplayActivePersonProvider } from "./context/DisplayActivePerson";
 
 //MUI-COMPONENTS
 import Grid from "@mui/material/Grid";
@@ -9,21 +9,13 @@ import Grid from "@mui/material/Grid";
 import ContactList from "./components/ContactList/ContactList";
 import MessageScreen from "./components/MessageScreen/MessageScreen";
 
-//CONSTANTS
-import { initialSelectedPerson } from "./Constants/AppConstants";
-
 const App: React.FC = () => {
-  const [selectedPerson, setSelectedPerson] = useState<object>(
-    initialSelectedPerson
-  );
   return (
     <Grid container sx={{ flexWrap: "no-wrap" }}>
-      <DisplayActivePerson.Provider
-        value={{ selectedPerson, setSelectedPerson }}
-      >
+      <DisplayActivePersonProvider>
         <ContactList />
         <MessageScreen />
-      </DisplayActivePerson.Provider>
+      </DisplayActivePersonProvider>
     </Grid>
   );
 };

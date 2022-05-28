@@ -22,10 +22,13 @@ import { DisplayMessageContext } from "../../../context/DisplayMessageContext";
 const MessageInput: React.FC = () => {
   const [message, setMessage] = useState<string>("");
 
-  const { messageList, setMessageList } = useContext(DisplayMessageContext);
+  const list = useContext(DisplayMessageContext);
 
   const onTextSubmit = () => {
-    setMessageList([...messageList, message]);
+    list !== null &&
+      list.messageList !== null &&
+      list.setMessageList !== null &&
+      list.setMessageList([...list.messageList, message]);
   };
   return (
     <Grid container sx={inputGrid}>
