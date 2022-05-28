@@ -1,4 +1,4 @@
-import { InitialSelectedPerson, initialSelectedPerson } from "../Constants/AppConstants";
+import { InitialSelectedPerson } from "../Constants/Types";
 import React, { createContext, useState } from "react";
 
 type ActivePersonType = {

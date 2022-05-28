@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 
 //MUI_COMPONENTS
 import { Grid, Box, TextField } from "@mui/material";
+
 //MUI SX PROPS AS CONSTANTS
 import {
   inputGrid,
@@ -16,6 +17,7 @@ import {
 import MoodSharpIcon from "@mui/icons-material/MoodSharp";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import SendIcon from "@mui/icons-material/Send";
+
 //CONTEXT
 import { DisplayMessageContext } from "../../../context/DisplayMessageContext";
 

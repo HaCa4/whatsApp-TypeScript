@@ -10,3 +10,7 @@ export type PersonCardProps = {
   name: string;
   text: string;
 };
+export type InitialSelectedPerson = {
+  photo: string;
+  title: string;
+};
