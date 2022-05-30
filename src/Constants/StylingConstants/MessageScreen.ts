@@ -51,7 +51,7 @@ export const flowStack = {
   },
   "&::-webkit-scrollbar-thumb": {
     backgroundColor: "#CED0D1",
-    height: "10px", //çalışmıyor
+    height: "10px",
   },
 };
 //MESSAGE INPUT

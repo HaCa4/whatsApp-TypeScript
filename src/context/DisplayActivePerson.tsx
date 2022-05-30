@@ -8,7 +8,7 @@ type ActivePersonType = {
 type DisplayActivePersonProviderProps = {
   children: React.ReactNode;
 };
-export const DisplayActivePerson = createContext<ActivePersonType | null>(null);
+export const DisplayActivePerson = createContext({} as ActivePersonType);
 
 export const DisplayActivePersonProvider = ({ children }: DisplayActivePersonProviderProps) => {
   const [selectedPerson, setSelectedPerson] = useState<InitialSelectedPerson | null>(null);

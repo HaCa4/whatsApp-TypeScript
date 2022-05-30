@@ -14,7 +14,7 @@ export const chatListBox = {
   },
   "&::-webkit-scrollbar-thumb": {
     backgroundColor: "#CED0D1",
-    height: "10px", //çalışmıyor
+    height: "10px",
   },
 };
 //PERSONCARD
@@ -85,5 +85,5 @@ export const searchInput = {
   borderRadius: "6px",
   width: "95%",
   height: "70%",
-  paddingLeft:"2rem"
+  paddingLeft: "2rem",
 };

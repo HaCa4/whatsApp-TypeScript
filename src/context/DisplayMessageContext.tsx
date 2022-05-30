@@ -5,7 +5,7 @@ type MessageListType = {
   setMessageList: React.Dispatch<React.SetStateAction<string[] | null>>;
 };
 
-export const DisplayMessageContext = createContext<MessageListType | null>(null);
+export const DisplayMessageContext = createContext({} as MessageListType);
 
 type DisplayMessageContextProviderProps = {
   children: React.ReactNode;

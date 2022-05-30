@@ -27,8 +27,7 @@ const MessageInput: React.FC = () => {
   const list = useContext(DisplayMessageContext);
 
   const onTextSubmit = () => {
-    list !== null &&
-      list.messageList !== null &&
+    list.messageList !== null &&
       list.setMessageList !== null &&
       list.setMessageList([...list.messageList, message]);
   };

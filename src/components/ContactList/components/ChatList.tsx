@@ -15,8 +15,8 @@ const ChatList: React.FC = () => {
   const [randomPersonList, setRandomPersonList] = useState<Person[]>([]);
 
   const fetchRandomPersonList: Function = async () => {
-      const response = await randomUser.get("/?results=20");
-      setRandomPersonList(response.data.results)
+    const response = await randomUser.get("/?results=20");
+    setRandomPersonList(response.data.results);
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const ChatList: React.FC = () => {
     <Box overflow="auto" sx={chatListBox}>
       {renderRandomPersonList()}
     </Box>
-  )
+  );
 };
 
 export default ChatList;
